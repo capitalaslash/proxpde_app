@@ -1,0 +1,14 @@
+# This is a Spack Environment file.
+#
+# It describes a set of packages to be installed, along with
+# configuration settings.
+spack:
+  # add package specs to the `specs` list
+  specs:
+  - hdf5@1.14.3
+  - pugixml@1.13
+  - suite-sparse@5.13.0
+  - yaml-cpp@0.7.0
+  view: true
+  concretizer:
+    unify: true

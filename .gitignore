@@ -1,0 +1,5 @@
+.cache/
+build*/
+spack_env/.spack-env/
+spack_env/spack.lock
+
