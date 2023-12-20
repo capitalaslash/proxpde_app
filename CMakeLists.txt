@@ -26,16 +26,8 @@ include(FeatureSummary)
 find_package(ProXPDE REQUIRED)
 
 add_executable(main)
-
-set(SRC_FILES
-  main.cpp
-)
-# set(HEADER_FILES
-#   header.hpp
-# )
-
 target_sources(main
-	PRIVATE ${SRC_FILES}
+	PRIVATE main.cpp
 	# PUBLIC ${HEADER_FILES}
 )
 target_link_libraries(main
@@ -44,7 +36,26 @@ target_link_libraries(main
     fmt::fmt
 )
 
+add_executable(mysolver)
+target_sources(mysolver
+	PRIVATE mysolver.cpp
+	# PUBLIC ${HEADER_FILES}
+)
+target_link_libraries(mysolver
+  PUBLIC
+    ProXPDE::proxpde
+    fmt::fmt
+)
+
 feature_summary(WHAT ALL)
+
+set(SRC_FILES
+  main.cpp
+  mysolver.cpp
+)
+# set(HEADER_FILES
+#   header.hpp
+# )
 
 find_program(CLANGFORMAT clang-format)
 if (CLANGFORMAT)
